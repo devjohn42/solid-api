@@ -37,3 +37,9 @@
 - {} Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
 - {} Todas as listas de dados precisam estar páginas com 20 itens por página;
 - {} O usuário deve ser identificado por um JWT (JSON Web Token);
+
+### ORM -> Object Relational Mapper [PRISMA]
+
+- Prisma -> Diminue muito o trabalho e a parte de duplicidade ao se trabalhar com banco de dados;
+- Integração muito boa com o typescript;
+- Migrations de forma automatizada (controle de versão do banco de dados);
