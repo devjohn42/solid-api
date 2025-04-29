@@ -1,0 +1,23 @@
+{
+  "name": "03-solid-api",
+  "version": "1.0.0",
+  "description": "- Funcionalidades da Aplicação (oq é possível o usuário fazer na aplicação)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "22.15.3",
+    "tsup": "8.4.0",
+    "tsx": "4.19.3",
+    "typescript": "5.8.3"
+  },
+  "dependencies": {
+    "fastify": "5.3.2"
+  }
+}
