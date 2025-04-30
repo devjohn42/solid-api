@@ -43,3 +43,9 @@
 - Prisma -> Diminue muito o trabalho e a parte de duplicidade ao se trabalhar com banco de dados;
 - Integração muito boa com o typescript;
 - Migrations de forma automatizada (controle de versão do banco de dados);
+
+### Relacionamentos
+
+=> 1-1 =>
+=> 1-N =>
+=> N-N =>
