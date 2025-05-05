@@ -1,5 +1,10 @@
 # API Gympass
 
+####
+    Oferecer no futuro uma forma de o sistema das academias integradas, poderem cadastrar usuários.
+    2 formas de cadastro <-> Usuário/Academia
+####
+
 ## Regras da aplicação
 
 ### RFs (Requisitos Funcionais)
@@ -49,3 +54,9 @@
 => 1-1 =>
 => 1-N =>
 => N-N =>
+
+### Controllers
+
+<!-- app.post('/users', controller) -->
+
+- Nome dado para a função que lida com a entrada de dados de uma requisição http e devolve uma resposta de alguma forma
