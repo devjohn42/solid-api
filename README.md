@@ -60,3 +60,12 @@
 <!-- app.post('/users', controller) -->
 
 - Nome dado para a função que lida com a entrada de dados de uma requisição http e devolve uma resposta de alguma forma
+
+### PATTERN
+
+### Repository Pattern
+
+- Serve para abstrair a parte de conexão|requisições que são feitas para o banco de dados em  um arquivo separado
+- Todas as operações do banco de dados irão passar pelos repositories
+- Vantagens
+  1ª => Troca para outra ferramenta (ORM), manutenível, alterar apenas os arquivos da pasta repositories
