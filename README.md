@@ -69,3 +69,13 @@
 - Todas as operações do banco de dados irão passar pelos repositories
 - Vantagens
   1ª => Troca para outra ferramenta (ORM), manutenível, alterar apenas os arquivos da pasta repositories
+
+## Princípios SOLID
+
+# =>
+# =>
+# =>
+# =>
+# => D - Dependency Inversion Principle -
+     - Altera um pouco como o   user-cases/service tem acesso as dependências
+     - Aos invés da classe instanciar as dependências que ela precisa, ela vai receber as dependências como parâmetro

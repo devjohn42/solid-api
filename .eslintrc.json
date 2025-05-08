@@ -4,6 +4,8 @@
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
-    "camelcase": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "camelcase": "off",
+    "no-useless-constructor": "off"
   }
 }
