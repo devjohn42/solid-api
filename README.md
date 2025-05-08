@@ -77,5 +77,5 @@
 # =>
 # =>
 # => D - Dependency Inversion Principle -
-     - Altera um pouco como o   user-cases/service tem acesso as dependências
+     - Altera um pouco como o use-cases/service tem acesso as dependências
      - Aos invés da classe instanciar as dependências que ela precisa, ela vai receber as dependências como parâmetro

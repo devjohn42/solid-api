@@ -28,7 +28,7 @@ export const register = async (req: FastifyRequest, res: FastifyReply) => {
         message: error.message,
       })
     }
-    return res.send(500).send() // TODO: especify
+    throw error
   }
 
   return res.status(201).send()
