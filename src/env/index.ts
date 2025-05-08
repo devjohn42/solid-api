@@ -12,7 +12,7 @@ if (_env.success === false) {
   console.error('🚨 Invalid enviroment variables', _env.error.format())
 
   /*
-    Top Level da aplicação, aso dê algum problema nas variáveis,
+    Top Level da aplicação, caso dê algum problema nas variáveis,
     a aplicação será derrubada
   */
   throw new Error('Invalid enviroment variables')
