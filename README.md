@@ -83,3 +83,5 @@
 ## Base da Primâmide dos testes (Testes Unitários)
 
 - Testam uma unidade isolada do código
+
+# Coverage
