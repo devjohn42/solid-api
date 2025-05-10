@@ -5,6 +5,19 @@ import { UserAlreadyExistsError } from './errors/user-already-exists-error'
 import { RegisterService } from './register.service'
 
 describe('Register Service', () => {
+  it('should be able to register', async () => {
+    const inMemoryUsersRepository = new InMemoryUsersRepository()
+    const registerService = new RegisterService(inMemoryUsersRepository)
+
+    const { user } = await registerService.userExecute({
+      name: 'Mark',
+      email: 'mark@gmail.com',
+      password: '123456',
+    })
+
+    expect(user.id).toEqual(expect.any(String))
+  })
+
   it('should hash user password upon registration', async () => {
     const inMemoryUsersRepository = new InMemoryUsersRepository()
     const registerService = new RegisterService(inMemoryUsersRepository)
