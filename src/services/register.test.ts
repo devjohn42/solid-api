@@ -1,23 +1,13 @@
+import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repositorie'
 import { compare } from 'bcryptjs'
 import { describe, expect, it } from 'vitest'
+import { UserAlreadyExistsError } from './errors/user-already-exists-error'
 import { RegisterService } from './register.service'
 
 describe('Register Service', () => {
   it('should hash user password upon registration', async () => {
-    const registerService = new RegisterService({
-      async findByEmail(email) {
-        return null
-      },
-      async create(data) {
-        return {
-          id: 'user1',
-          name: data.name,
-          email: data.email,
-          password_hash: data.password_hash,
-          created_at: new Date(),
-        }
-      },
-    })
+    const inMemoryUsersRepository = new InMemoryUsersRepository()
+    const registerService = new RegisterService(inMemoryUsersRepository)
 
     const { user } = await registerService.userExecute({
       name: 'Mark',
@@ -31,5 +21,26 @@ describe('Register Service', () => {
     )
 
     expect(isPasswordCorrectlyHashed).toBe(true)
+  })
+
+  it('should not be able to register with same email twice', async () => {
+    const inMemoryUsersRepository = new InMemoryUsersRepository()
+    const registerService = new RegisterService(inMemoryUsersRepository)
+
+    const email = 'mark@gmail.com'
+
+    await registerService.userExecute({
+      name: 'Mark',
+      email,
+      password: '123456',
+    })
+
+    expect(() =>
+      registerService.userExecute({
+        name: 'Mark',
+        email,
+        password: '123456',
+      }),
+    ).rejects.toBeInstanceOf(UserAlreadyExistsError)
   })
 })
