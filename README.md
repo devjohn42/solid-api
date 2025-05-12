@@ -12,7 +12,7 @@
 - Funcionalidades da Aplicação (oq é possível o usuário fazer na aplicação)
 
 - [x] Deve ser possível se cadastrar;
-- [] Deve ser possível se autenticar;
+- [x] Deve ser possível se autenticar;
 - [] Deve ser possível obter o perfil de um usuário logado;
 - [] Deve ser possível obter o número de check-ins realizados pelo usuário logado;
 - [] Deve ser possível o usuário obter o seu histórico de check-ins;
@@ -85,3 +85,9 @@
 - Testam uma unidade isolada do código
 
 # Coverage
+
+## Factory Pattern
+
+- Uma fábrica de criação de coisas comuns, que tem muitas dependências
+- Funções que criam entidades maiores, com dependências, cálculos.
+- Não possuem regras de negócio, servindo para instanciação de classes/entidades que possuem muitos requisitos/dependências
