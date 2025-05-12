@@ -1,19 +1,20 @@
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repositorie'
 import { hash } from 'bcryptjs'
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { AuthenticateService } from './authenticate.service'
 import { InvalidCredentialsError } from './errors/invalid-credentials-error'
 
-describe('Authenticate Service', () => {
-  it('should be able to authenticate', async () => {
-    const inMemoryUsersRepository = new InMemoryUsersRepository()
-    // pattern para testes:
-    // Nomear qual é a variável principal (principal entidade sendo testada)
-    // <- sut (Sistem Under Test) ->
-    // Usado para identificar a principal variável que está sendo testada
-    const sut = new AuthenticateService(inMemoryUsersRepository)
+let usersRepository: InMemoryUsersRepository
+let sut: AuthenticateService
 
-    await inMemoryUsersRepository.create({
+describe('Authenticate Service', () => {
+  beforeEach(() => {
+    usersRepository = new InMemoryUsersRepository()
+    sut = new AuthenticateService(usersRepository)
+  })
+
+  it('should be able to authenticate', async () => {
+    await usersRepository.create({
       name: 'John Doe',
       email: 'johndoe@gmail.com',
       password_hash: await hash('123456', 4),
@@ -28,13 +29,6 @@ describe('Authenticate Service', () => {
   })
 
   it('should not be able to authenticate with wrong email', async () => {
-    const inMemoryUsersRepository = new InMemoryUsersRepository()
-    // pattern para testes:
-    // Nomear qual é a variável principal (principal entidade sendo testada)
-    // <- sut (Sistem Under Test) ->
-    // Usado para identificar a principal variável que está sendo testada
-    const sut = new AuthenticateService(inMemoryUsersRepository)
-
     expect(
       sut.athenticateExecute({
         email: 'johndoe@gmail.com',
@@ -44,14 +38,7 @@ describe('Authenticate Service', () => {
   })
 
   it('should not be able to authenticate with wrong password', async () => {
-    const inMemoryUsersRepository = new InMemoryUsersRepository()
-    // pattern para testes:
-    // Nomear qual é a variável principal (principal entidade sendo testada)
-    // <- sut (Sistem Under Test) ->
-    // Usado para identificar a principal variável que está sendo testada
-    const sut = new AuthenticateService(inMemoryUsersRepository)
-
-    await inMemoryUsersRepository.create({
+    await usersRepository.create({
       name: 'John Doe',
       email: 'johndoe@gmail.com',
       password_hash: await hash('123456', 4),
