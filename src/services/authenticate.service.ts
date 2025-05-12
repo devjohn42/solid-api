@@ -16,7 +16,7 @@ interface AuthenticateServiceResponse {
 export class AuthenticateService {
   constructor(private usersRepository: UsersRepository) { }
 
-  async athenticateExecute({
+  async authenticateExecute({
     email,
     password,
   }: AuthenticateServiceRequest): Promise<AuthenticateServiceResponse> {
