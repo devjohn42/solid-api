@@ -13,7 +13,7 @@ interface AuthenticateServiceResponse {
 }
 // type AuthenticateServiceResponse = void // evita erros (TODO)
 
-export default class AuthenticateService {
+export class AuthenticateService {
   constructor(private usersRepository: UsersRepository) { }
 
   async athenticateExecute({
