@@ -18,7 +18,7 @@
 - [] Deve ser possível o usuário obter o seu histórico de check-ins;
 - [] Deve ser possível o usuário buscar academias próximas;
 - [] Deve ser possível o usuário buscar uma academias pelo nome;
-- [] Deve ser possível o usuário realizar check-in em uma academia;
+- [x] Deve ser possível o usuário realizar check-in em uma academia;
 - [] Deve ser possível validar o check-in de um usuário;
 - [] Deve ser possível cadastrar uma academia;
 
@@ -91,3 +91,13 @@
 - Uma fábrica de criação de coisas comuns, que tem muitas dependências
 - Funções que criam entidades maiores, com dependências, cálculos.
 - Não possuem regras de negócio, servindo para instanciação de classes/entidades que possuem muitos requisitos/dependências
+
+## Metodologia de Desenvolvimento - TDD = Test Driven Development
+
+1º estado - red => Erro no teste
+2º estado - green => Codar o mínimo possível para o teste passar
+3º estado - refector => Refatora
+
+- Diz para você que se vc desenvolve o teste de alguma regra de negócios ou funcionalidade antes da implementação daquilo, o teste por si só te ajuda a validar se a sua implementação está ok ou não
+- Metodoligia que facilita você entender e caminhar pela regra de negócios de uma funcionalidade durante o seu desenvolvimento
+- Útil para features/regra de negócios mais complexas
