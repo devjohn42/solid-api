@@ -25,7 +25,7 @@ describe('Register Service', () => {
       userId: 'userId-1',
     })
 
-    console.log(checkIn.created_at)
+    // console.log(checkIn.created_at)
 
     expect(checkIn.id).toEqual(expect.any(String))
   })
