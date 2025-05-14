@@ -16,11 +16,11 @@ describe('Register Service', () => {
 
     gymsRepository.items.push({
       id: 'gymId-1',
-      title: 'JaaScript Gym',
+      title: 'JavaScript Gym',
       description: '',
       phone: '',
-      latitude: new Decimal(0),
-      longitude: new Decimal(0),
+      latitude: new Decimal(-22.8130816),
+      longitude: new Decimal(-43.0178304),
     })
 
     vi.useFakeTimers()
@@ -86,5 +86,25 @@ describe('Register Service', () => {
     })
 
     expect(checkIn.id).toEqual(expect.any(String))
+  })
+
+  it('should not be able to check in on distant gym', async () => {
+    gymsRepository.items.push({
+      id: 'gymId-2',
+      title: 'Node Gym',
+      description: '',
+      phone: '',
+      latitude: new Decimal(-22.722697),
+      longitude: new Decimal(-42.8077368),
+    })
+
+    await expect(
+      sut.CheckInExecute({
+        gymId: 'gymId-2',
+        userId: 'userId-1',
+        userLatitude: -22.8130816,
+        userLongitude: -43.0178304,
+      }),
+    ).rejects.toBeInstanceOf(Error)
   })
 })
