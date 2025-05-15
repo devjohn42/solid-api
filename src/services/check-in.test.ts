@@ -14,13 +14,13 @@ describe('Register Service', () => {
     gymsRepository = new InMemoryGymsRepository()
     sut = new CheckInService(checkInsRepository, gymsRepository)
 
-    gymsRepository.items.push({
+    await gymsRepository.create({
       id: 'gymId-1',
       title: 'JavaScript Gym',
       description: '',
       phone: '',
-      latitude: new Decimal(-22.8130816),
-      longitude: new Decimal(-43.0178304),
+      latitude: -22.8130816,
+      longitude: -43.0178304,
     })
 
     vi.useFakeTimers()
