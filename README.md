@@ -101,3 +101,17 @@
 - Diz para você que se vc desenvolve o teste de alguma regra de negócios ou funcionalidade antes da implementação daquilo, o teste por si só te ajuda a validar se a sua implementação está ok ou não
 - Metodoligia que facilita você entender e caminhar pela regra de negócios de uma funcionalidade durante o seu desenvolvimento
 - Útil para features/regra de negócios mais complexas
+
+## 3 Estratégias de Autenticação
+
+- Basic Auth => Faz com que em todas as requisições seja necessário que o usuário    envie suas credenciais no cabeçalho (metadados da req e res) da requisição (não é muito seguro)
+- JWT = JSON Web Token => Usuário faz login | envia e-mail/senha | back-end cria um token ÚNICO não modificável e STATELESS
+
+- STATELESS: Não armazenado em nenhuma estrutura de persitência de dados (banco de dados)
+
+- Back-end: Quando vai criar o token ele use uma PALAVRA-CHAVE (string)
+
+// Apenas o back-end pode criar novos tokens, só ele pode validar através da assinatura que o token criado é um token que foi originado de uma palavra chave
+- Palavra-chave: iFJWNIPwuefbpUFBPBUAgafkgjaçigu@#¨$@LKHB$@#*&¨G%@KLJ
+
+- E-mail/senha -> header.payload.sign
