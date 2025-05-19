@@ -20,7 +20,7 @@ describe('Get User Profile Service', () => {
       password_hash: await hash('123456', 4),
     })
 
-    const { user } = await sut.authenticateExecute({
+    const { user } = await sut.profileExecute({
       userId: createdUser.id,
     })
 
@@ -30,7 +30,7 @@ describe('Get User Profile Service', () => {
 
   it('should not be able to get user profile with wrong id', async () => {
     await expect(
-      sut.authenticateExecute({
+      sut.profileExecute({
         userId: 'non-existing-id',
       }),
     ).rejects.toBeInstanceOf(ResourceNotFoundError)
