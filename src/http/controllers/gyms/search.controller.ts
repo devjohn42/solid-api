@@ -8,7 +8,7 @@ export const search = async (req: FastifyRequest, res: FastifyReply) => {
     page: z.coerce.number().min(1).default(1),
   })
 
-  const { query, page } = searchGymsQuerySchema.parse(req.body) // erro proposital nos teste
+  const { query, page } = searchGymsQuerySchema.parse(req.query)
 
   const searchGymsService = makeSearchGymsService()
 
@@ -17,7 +17,7 @@ export const search = async (req: FastifyRequest, res: FastifyReply) => {
     page,
   })
 
-  return res.status(201).send({
+  return res.status(200).send({
     gyms,
   })
 }
