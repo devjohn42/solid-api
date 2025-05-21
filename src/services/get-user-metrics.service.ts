@@ -11,7 +11,7 @@ interface GetUserMetricsServiceResponse {
 export class GetUserMetricsService {
   constructor(private checkInsRepository: CheckInsRepository) { }
 
-  async CheckInExecute({
+  async checkInExecute({
     userId,
   }: GetUserMetricsServiceRequest): Promise<GetUserMetricsServiceResponse> {
     const checkInsCount = await this.checkInsRepository.countByUserId(userId)

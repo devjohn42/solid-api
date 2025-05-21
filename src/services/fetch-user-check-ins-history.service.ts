@@ -19,7 +19,7 @@ interface FetchUserCheckInsHistorySericeResponse {
 export class FetchUserCheckInsHistorySerice {
   constructor(private checkInsRepository: CheckInsRepository) { }
 
-  async CheckInExecute({
+  async checkInExecute({
     userId,
     page,
   }: FetchUserCheckInsHistorySericeRequest): Promise<FetchUserCheckInsHistorySericeResponse> {
