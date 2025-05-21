@@ -115,3 +115,9 @@
 - Palavra-chave: iFJWNIPwuefbpUFBPBUAgafkgjaçigu@#¨$@LKHB$@#*&¨G%@KLJ
 
 - E-mail/senha -> header.payload.sign
+
+# Teste E2E
+
+- Criar poucos testes e2e, pois são pesados para rodar
+- Não se cria testes e2e para cada regra de negócio da aplicação
+- Criação de testes mais abertos, que testam as rotas de sucesso da aplicação
