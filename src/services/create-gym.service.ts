@@ -1,8 +1,5 @@
 import { GymsRepository } from '@/repositories/gyms-repository'
-import { UsersRepository } from '@/repositories/users-repository'
-import { hash } from 'bcryptjs'
-import { Gym, User } from 'generated/prisma'
-import { UserAlreadyExistsError } from './errors/user-already-exists-error'
+import { Gym } from 'generated/prisma'
 
 interface CreateGymUserRequest {
   title: string
@@ -19,7 +16,7 @@ interface CreateGymServiceResponse {
 export class CreateGymService {
   constructor(private gymsRepository: GymsRepository) { }
 
-  async userExecute({
+  async gymExecute({
     title,
     description,
     phone,
