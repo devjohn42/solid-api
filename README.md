@@ -106,10 +106,13 @@
 
 - Basic Auth => Faz com que em todas as requisições seja necessário que o usuário    envie suas credenciais no cabeçalho (metadados da req e res) da requisição (não é muito seguro)
 - JWT = JSON Web Token => Usuário faz login | envia e-mail/senha | back-end cria um token ÚNICO não modificável e STATELESS
-
-- STATELESS: Não armazenado em nenhuma estrutura de persitência de dados (banco de dados)
-
-- Back-end: Quando vai criar o token ele use uma PALAVRA-CHAVE (string)
+    - STATELESS: Não armazenado em nenhuma estrutura de persitência de dados (banco de dados)
+    - Back-end: Quando vai criar o token ele use uma PALAVRA-CHAVE (string)
+    - Por não ser salvo no banco de dados, se torna difícil ser invalidado
+    1ª - Comparação de datas utilizando o "iat"
+    2ª - Refresh Token, um segundo token com uma data de inspiração maior    específico para renovação do token original:
+      1º Token = Visível apenas no Front-End
+      2º Token = "Invisível"/Encriptado para o Front-end não conseguir acesso
 
 // Apenas o back-end pode criar novos tokens, só ele pode validar através da assinatura que o token criado é um token que foi originado de uma palavra chave
 - Palavra-chave: iFJWNIPwuefbpUFBPBUAgafkgjaçigu@#¨$@LKHB$@#*&¨G%@KLJ
