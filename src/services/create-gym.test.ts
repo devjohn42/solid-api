@@ -12,7 +12,7 @@ describe('Create Gym Service', () => {
   })
 
   it('should be able to create a gym', async () => {
-    const { gym } = await sut.userExecute({
+    const { gym } = await sut.gymExecute({
       title: 'JavaScript Gym',
       description: null,
       phone: null,

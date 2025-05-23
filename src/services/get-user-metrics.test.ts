@@ -27,7 +27,7 @@ describe('Get User Metrics Service', () => {
       user_id: 'user-01',
     })
 
-    const { checkInsCount } = await sut.CheckInExecute({
+    const { checkInsCount } = await sut.checkInExecute({
       userId: 'user-01',
     })
 
