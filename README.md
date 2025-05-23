@@ -129,3 +129,16 @@
 
 - Determinar permissões que o usuário pode ter na aplicação baseado em algum cargo que ele tenha
 - Geralmente (Admin - Gestor)
+
+# CI => Continuous Integration
+
+- O Processo de receber código em um repositório (github) e fazer verificações/validações para conseguir de uma maneira mais automatizada receber novas verções/features do código
+
+- Estratégias para receber de forma contínua novos códigos na aplicação
+- Execução/Validação
+
+# !== PODEM SER USADOS JUNTOS OU NÃO
+
+# CD => Continuous Deployment/Delivery
+
+- O Processo de receber ao código em um repositório (github) ou aprovar uma pull request, ele fará automaticamente o deploy do código
