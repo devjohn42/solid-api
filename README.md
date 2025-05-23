@@ -142,3 +142,6 @@
 # CD => Continuous Deployment/Delivery
 
 - O Processo de receber ao código em um repositório (github) ou aprovar uma pull request, ele fará automaticamente o deploy do código
+
+
+#### Alteração para testar os testes e2e
